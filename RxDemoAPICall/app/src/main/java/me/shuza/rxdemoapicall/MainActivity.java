@@ -60,29 +60,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void getDataFromAPI() {
         ApiService apiService = NetworkManager.createRetrofit().create(ApiService.class);
-        apiService.getDataFromAPI().enqueue(new Callback<ResponsePojo>() {
-            @Override
-            public void onResponse(Call<ResponsePojo> call, Response<ResponsePojo> response) {
-                LogUtil.printLogMessage("response", response.toString());
-                progressDialog.dismiss();
-                if (response.isSuccessful()) {
-                    ResponsePojo data = response.body();
-                    tvName.setText("Name : " + data.getName());
-                    tvEmail.setText("Email : " + data.getEmail());
-                    tvBlog.setText("Blog : " + data.getBlog());
-                } else {
-                    Toast.makeText(MainActivity.this, "Failed error: " + response.errorBody(), Toast.LENGTH_SHORT).show();
-                }
-            }
+        apiService.getDataFromAPI()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponsePojo>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-            @Override
-            public void onFailure(Call<ResponsePojo> call, Throwable t) {
-                LogUtil.printLogMessage("error response", t.getMessage());
-                LogUtil.printLogMessage("error response", call.toString());
+                    }
 
-                progressDialog.dismiss();
-                tvName.setText("error :   " + t.getMessage());
-            }
-        });
+                    @Override
+                    public void onNext(ResponsePojo data) {
+                        progressDialog.dismiss();
+                        tvName.setText("Name : " + data.getName());
+                        tvEmail.setText("Email : " + data.getEmail());
+                        tvBlog.setText("Blog : " + data.getBlog());
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        LogUtil.printLogMessage("error response", t.getMessage());
+
+                        progressDialog.dismiss();
+                        tvName.setText("error :   " + t.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
     }
 }
