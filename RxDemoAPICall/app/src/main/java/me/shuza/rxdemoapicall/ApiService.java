@@ -17,5 +17,5 @@ import retrofit2.http.POST;
 public interface ApiService {
 
     @POST("dummy_response.php")
-    Call<ResponsePojo> getDataFromAPI();
+    Observable<ResponsePojo> getDataFromAPI();
 }
