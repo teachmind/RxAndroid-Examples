@@ -5,7 +5,7 @@ This repository contains example of using RxJava with Android to solve real-worl
 # Examples
 1. [Form validation](#1-form-validation-using-combinelatest)
 2. [Timer demo](#2-timer-demo-interval-and-delay)
-3. [Two-way data binding](3-data-binding-for-textview-using-publishsubject)
+3. [Two-way data binding](#3-data-binding-for-textview-using-publishsubject)
 4. [Search implementation](#4-search-implementation)
 5. [RestFul API call](#5-restful-api-call)
 
