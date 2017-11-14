@@ -5,9 +5,9 @@ This repository contains example of using RxJava with Android to solve real-worl
 # Examples
 1. [Form validation](#1-form-validation-using-combinelatest)
 2. [Timer demo](#2-timer-demo-interval-and-delay)
-3. [Two-way data binding](#3-Data-binding-for-TextView-using-PublishSubject)
-4. [Search implementation](#4-Search-implementation)
-5. [RestFul API call](#5-RestFul-API-call)
+3. [Two-way data binding](3-data-binding-for-textview-using-publishsubject)
+4. [Search implementation](#4-search-implementation)
+5. [RestFul API call](#5-restful-api-call)
 
 ### 1. Form validation (using combinelatest)
 `.combinelatest` allows you to motinor the state of multiple observables at a single place. [This example](https://github.com/shuza/RxJava-Android-Samples/tree/master/RxFormValidation) demonstrats the use of combinelatest to validate a basic form. In this example there are 3 input fileds for the form. The form will be valid if all those 3 fields are valid. If any input field is invalid, an error message will be shown against invalid input.
