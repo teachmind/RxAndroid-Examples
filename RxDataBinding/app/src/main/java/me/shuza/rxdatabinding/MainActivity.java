@@ -13,6 +13,14 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.processors.PublishProcessor;
 import io.reactivex.subscribers.DisposableSubscriber;
 
+/**
+ * :=  created by:  Shuza
+ * :=  (C) CopyRight Shuza
+ * :=  www.shuza.ninja
+ * :=  shuza.sa@gmail.com
+ * :=  Fun  :  Coffee  :  Code
+ **/
+
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.etNumber1)
     EditText etNumber1;
