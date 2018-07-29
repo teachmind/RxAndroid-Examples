@@ -16,6 +16,17 @@ import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.subscribers.DisposableSubscriber;
 
+/**
+ *
+ * :=  created by:  Shuza
+ * :=  create date:  27-Jun-17
+ * :=  (C) CopyRight Shuza
+ * :=  www.shuza.ninja
+ * :=  shuza.sa@gmail.com
+ * :=  Fun  :  Coffee  :  Code
+ *
+ **/
+
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.etFirstName)
     EditText etFirstName;
